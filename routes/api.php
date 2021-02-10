@@ -30,6 +30,18 @@ CRUD IS BASICALLY
 5. delete (DELETE)      /api/posts/{id}
 */
 
+Route::get('/posts');
+
+//to create a resource(posts) in laravel
+//1 create the database and migrations
+//2 create a model
+//2.5 create a service? Eloquent ORM
+//3. create a controller to go get info from de database
+//4 return that info
+
+
+
+
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
