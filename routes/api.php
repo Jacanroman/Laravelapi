@@ -1,7 +1,9 @@
 <?php
 
+use App\Models\Post;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -30,7 +32,12 @@ CRUD IS BASICALLY
 5. delete (DELETE)      /api/posts/{id}
 */
 
-Route::get('/posts');
+Route::get('/posts', function(){
+
+    $post = Post::create(['title'=>'my first post','slug'=>'my-first-post']);
+
+    return $post;
+});
 
 //to create a resource(posts) in laravel
 //1 create the database and migrations
