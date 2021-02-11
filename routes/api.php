@@ -69,6 +69,17 @@ Route::resource('posts','PostController');
 
 Route::resource('posts','PostController');
 
+
+/*if in the route we want api/v1/posts api/v2/posts
+
+Route::prefix('v1')->group(function(){
+    Route::apiResource('posts','PostController');
+});
+
+*/
+
+
+
 //to create a resource(posts) in laravel
 //1 create the database and migrations
 //2 create a model
