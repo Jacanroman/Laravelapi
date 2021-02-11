@@ -1,6 +1,6 @@
 <?php
 
-use App\Models\Post;
+//use App\Models\Post;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -30,7 +30,6 @@ CRUD IS BASICALLY
 3. get a single (GET)   /api/posts/{id}
 4. update a single (PUT) /api/posts/{id}
 5. delete (DELETE)      /api/posts/{id}
-*/
 
 Route::get('/posts', function(){
 
@@ -38,6 +37,37 @@ Route::get('/posts', function(){
 
     return $post;
 });
+
+
+//Create post
+Route::post('/posts')
+
+
+//Update posts
+Route::put('/posts/{id}')
+
+
+//Delete posts
+Route::delete('/posts/{id}')
+
+Esto mejor que hacerlo aqui se hace en un controlador
+en este caso PostController
+
+*/
+
+
+Route::get('/posts','PostController@index');
+Route::post('/posts','PostController@store');
+Route::put('/posts','PostController@update');
+Route::delete('/posts','PostController@destroy');
+
+/*camino corto para lo anterior 
+Route::resource('posts','PostController');
+
+*/
+
+
+Route::resource('posts','PostController');
 
 //to create a resource(posts) in laravel
 //1 create the database and migrations
